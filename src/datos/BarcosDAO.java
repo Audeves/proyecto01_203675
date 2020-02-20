@@ -17,7 +17,7 @@ import objetosnegocio.Socio;
 
 /**
  *
- * @author angel
+ * @author Luis
  */
 public class BarcosDAO extends BaseDAO{
     
