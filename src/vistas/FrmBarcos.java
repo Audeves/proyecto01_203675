@@ -15,7 +15,7 @@ import objetosnegocio.Socio;
 
 /**
  *
- * @author angel
+ * @author Luis
  */
 public class FrmBarcos extends javax.swing.JFrame {
 
