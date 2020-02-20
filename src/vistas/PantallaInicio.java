@@ -7,7 +7,7 @@ package vistas;
 
 /**
  *
- * @author luis
+ * @author labcisco
  */
 public class PantallaInicio extends javax.swing.JFrame {
 

@@ -16,7 +16,7 @@ import objetosnegocio.Salida;
 
 /**
  *
- * @author Luis
+ * @author labcisco
  */
 public class SalidasDAO extends BaseDAO{
     

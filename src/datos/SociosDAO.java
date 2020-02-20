@@ -28,8 +28,8 @@ public class SociosDAO extends BaseDAO {
         try{
             Connection conn = this.getConnection();
             Statement comando = conn.createStatement();
-            String insert = String.format("insert into socios(nombre,curp) "
-                    + "values('%s','%s');" , socio.getNombre(), socio.getCurp());
+            String insert = String.format("insert into socios(dni, nombre) "
+                    + "values('%s','%s');" , socio.getDNI(), socio.getNombre());
             comando.executeUpdate(insert);
             conn.close();
         }catch(SQLException ex){
@@ -42,8 +42,8 @@ public class SociosDAO extends BaseDAO {
             Connection conn = this.getConnection();
             Statement comando = conn.createStatement();
             String update = String.format("UPDATE socios SET "
-                    + "socios.curp = '%s', socios.nombre = '%s' WHERE socios.idsocios = %s;", 
-                    socio.getCurp(), socio.getNombre(), socio.getId());
+                    + "socios.dni = '%s', socios.nombre = '%s' WHERE socios.idsocios = %s;", 
+                    socio.getDNI(), socio.getNombre(), socio.getId());
             comando.executeUpdate(update);
             conn.close();
         }catch(SQLException ex){
@@ -55,14 +55,14 @@ public class SociosDAO extends BaseDAO {
         try{
             Connection conn = this.getConnection();
             Statement comando = conn.createStatement();           
-            String query = String.format("SELECT idsocios,nombre,curp "
+            String query = String.format("SELECT idsocios,dni,nombre "
                     + "FROM socios WHERE idsocios=%s;", id);
             ResultSet resultado = comando.executeQuery(query);
             if(resultado.next()){
                 Socio socio = new Socio();
                 socio.setId(resultado.getInt("idsocios"));
+                socio.setDNI(resultado.getString("dni"));
                 socio.setNombre(resultado.getString("nombre"));
-                socio.setCurp(resultado.getString("curp"));
                 return socio;
             }
             conn.close();
@@ -81,16 +81,16 @@ public class SociosDAO extends BaseDAO {
             Statement comando = conn.createStatement();
             ResultSet resultado;
             if(textoBusqueda == null || textoBusqueda.isEmpty()){
-                resultado = comando.executeQuery("SELECT idsocios,nombre,curp FROM socios;");
+                resultado = comando.executeQuery("SELECT * FROM socios;");
             }else{
-                resultado = comando.executeQuery("SELECT idsocios,nombre,curp "
-                        + "FROM socios WHERE nombre LIKE '%" + textoBusqueda + "%';");
+                resultado = comando.executeQuery("SELECT *"
+                        + "FROM socios WHERE dni LIKE '%" + textoBusqueda + "%';");
             }            
             while(resultado.next()){
                 Socio socio = new Socio();
                 socio.setId(resultado.getInt("idsocios"));
+                socio.setDNI(resultado.getString("dni"));
                 socio.setNombre(resultado.getString("nombre"));
-                socio.setCurp(resultado.getString("curp"));
                 socios.add(socio);
             }            
             return socios;

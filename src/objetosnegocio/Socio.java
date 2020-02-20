@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Socio {
     private Integer id;
     private String nombre;
-    private String curp;
+    private String dni;
 
     public Socio() {}
 
@@ -13,15 +13,15 @@ public class Socio {
         this.id = id;
     }
 
-    public Socio(String nombre, String curp) {
+    public Socio(String nombre, String dni) {
         this.nombre = nombre;
-        this.curp = curp;
+        this.dni = dni;
     }        
     
-    public Socio(Integer id, String nombre, String curp) {
+    public Socio(Integer id, String nombre, String dni) {
         this.id = id;
         this.nombre = nombre;
-        this.curp = curp;
+        this.dni = dni;
     }   
 
     public Integer getId() {
@@ -40,12 +40,12 @@ public class Socio {
         this.nombre = nombre;
     }
 
-    public String getCurp() {
-        return curp;
+    public String getDNI() {
+        return dni;
     }
 
-    public void setCurp(String curp) {
-        this.curp = curp;
+    public void setDNI(String dni) {
+        this.dni = dni;
     }
 
     @Override
@@ -82,7 +82,7 @@ public class Socio {
         return new Object[]{
             this.getId(),
             this.getNombre(),
-            this.getCurp()
+            this.getDNI()
         };
     }
 }

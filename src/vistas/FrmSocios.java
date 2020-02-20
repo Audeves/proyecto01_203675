@@ -32,10 +32,10 @@ public class FrmSocios extends javax.swing.JFrame {
 
         lblID = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
-        lblCurp = new javax.swing.JLabel();
+        lblDNI = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtCURP = new javax.swing.JTextField();
+        txtDNI = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtBusqueda = new javax.swing.JTextField();
@@ -57,7 +57,7 @@ public class FrmSocios extends javax.swing.JFrame {
 
         lblNombre.setText("Nombre");
 
-        lblCurp.setText("Curp");
+        lblDNI.setText("DNI");
 
         txtId.setEditable(false);
         txtId.setText("0");
@@ -83,12 +83,14 @@ public class FrmSocios extends javax.swing.JFrame {
             }
         });
 
+        panSocios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         tblSocios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "CURP"
+                "ID", "Nombre", "DNI"
             }
         ) {
             Class[] types = new Class [] {
@@ -135,38 +137,31 @@ public class FrmSocios extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblID)
-                                                .addGap(26, 26, 26))
-                                            .addComponent(lblCurp, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(18, 18, 18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(lblNombre)
-                                        .addGap(9, 9, 9)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCURP, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
+                                    .addComponent(lblID)
+                                    .addComponent(lblNombre))
+                                .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnGuardar)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnCancelar)))))
+                                        .addComponent(btnCancelar))
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblDNI)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addComponent(panSocios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -179,23 +174,23 @@ public class FrmSocios extends javax.swing.JFrame {
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
+                        .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCURP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCurp))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDNI))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombre))
-                        .addGap(6, 6, 6)
+                            .addComponent(lblNombre)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnGuardar)
                             .addComponent(btnCancelar)))
                     .addComponent(panSocios, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnActualizar))
@@ -241,19 +236,19 @@ public class FrmSocios extends javax.swing.JFrame {
     private void cargarSocios(){        
         List<Socio> socios = this.control.obtenerSocios(txtBusqueda.getText());
         if(socios != null){
-            DefaultTableModel modelo = 
-                        (DefaultTableModel)tblSocios.getModel();
+            DefaultTableModel modelo =  (DefaultTableModel)tblSocios.getModel();
             modelo.setRowCount(0);
             for(Socio socio: socios){                
                 modelo.addRow(socio.toArray());
             }
+            tblSocios.setModel(modelo);
         }
     }
     
     private void guardarSocio(){
         Socio socio = new Socio();
         socio.setNombre(txtNombre.getText());
-        socio.setCurp(txtCURP.getText());
+        socio.setDNI(txtDNI.getText());
         this.control.guardarSocio(socio);
     }
     
@@ -280,14 +275,14 @@ public class FrmSocios extends javax.swing.JFrame {
         Socio socio = new Socio();
         socio.setId(Integer.parseInt(txtId.getText()));
         socio.setNombre(txtNombre.getText());
-        socio.setCurp(txtCURP.getText());
+        socio.setDNI(txtDNI.getText());
         this.control.actualizarSocio(socio);
     }
     
     private void limpiarFormulario(){
         txtId.setText("0");
         txtNombre.setText("");
-        txtCURP.setText("");
+        txtDNI.setText("");
     }
     
     private void cargarSocio(){
@@ -302,7 +297,7 @@ public class FrmSocios extends javax.swing.JFrame {
             if(socio != null){
                 txtId.setText(socio.getId().toString());
                 txtNombre.setText(socio.getNombre());
-                txtCURP.setText(socio.getCurp());
+                txtDNI.setText(socio.getDNI());
             }else{
                 JOptionPane.showMessageDialog(this, "No se encontró el socio", 
                         "Alerta", JOptionPane.WARNING_MESSAGE);
@@ -316,13 +311,13 @@ public class FrmSocios extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JLabel lblCurp;
+    private javax.swing.JLabel lblDNI;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNombre;
-    public javax.swing.JScrollPane panSocios;
+    private javax.swing.JScrollPane panSocios;
     private javax.swing.JTable tblSocios;
     private javax.swing.JTextField txtBusqueda;
-    private javax.swing.JTextField txtCURP;
+    private javax.swing.JTextField txtDNI;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
